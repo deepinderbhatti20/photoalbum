@@ -67,8 +67,7 @@ def register(request):
             login(request,new_user)
             return redirect('gallery')
         else:
-            messages.error(request,'Something went wrong, please retry...')
-            print(eform.errors)
+            messages.error(request,'Something went wrong, please refresh page...')
             err=eform.errors
             return render (request,'register.html',{"err":err})
 
