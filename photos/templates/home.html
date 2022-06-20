@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container-fluid">
+    <div class="row mt-3">
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-header">
+                    Categories
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><a href="{% url 'gallery' %}">All</a></li>
+                    {% for i in category %}
+                    <li class="list-group-item"><a href="{% url 'gallery' %}?category={{i.name}}">{{i.name}}</a></li>
+                    {% endfor %}
+                    <li class="list-group-item"><a href="{% url 'addpost' %}"
+                            class="btn btn-secondary btn-lg btn-block">Add Photo</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-9">
+            <div class="row">
+                {% for i in photo %}
+                <div class="col-md-4">
+                    <div class="card my-2">
+                        <img src="{{i.image.url}}" class="image-thumbnail" alt="loading failed">
+                        <div class="card-body">
+                            <p>Category: {{i.category}}</p>
+                        </div>
+                        <a href="{% url 'photo' i.id %}" class="btn btn-outline-dark btn-sm m-1">Read More</a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

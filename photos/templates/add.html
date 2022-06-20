@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<div class="container-fluid my-4">
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                {{form.descr | as_crispy_field}}
+                {{form.category | as_crispy_field}}
+                <label for="category_new">Create Category</label>
+                <input type="text" name="category_new" id="category_new" class="form-control"><br>
+                {{form.image | as_crispy_field}}
+                <button type="submit" class="btn btn-success">Add Image</button>
+            </div>
+        </div>
+
+    </form>
+</div>
+{% endblock %}
