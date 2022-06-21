@@ -68,8 +68,10 @@ def register(request):
             return redirect('gallery')
         else:
             messages.error(request,'Something went wrong, please refresh page...')
-            err=eform.errors
-            return render (request,'register.html',{"err":err})
+            ctxt = {
+                'form':eform
+            }
+            return render (request,'register.html',ctxt)
 
 
     else:
