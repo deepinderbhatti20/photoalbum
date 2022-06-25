@@ -9,6 +9,10 @@
          <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300i,400,700&display=swap" rel="stylesheet">
          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
          <style>
+            .responsive {
+                max-width: 100%;
+                height: auto;
+            }
             body {
             background-color: #c1e1ea;
             font-family: Nunito Sans;
@@ -63,7 +67,7 @@
                 <div class="col">
                     <div>
                         <a href="{% url 'gallery' %}" class="btn">Go Back</a><br>
-                        <img style="max-width: 900px;" src="{{photo.image.url}}" alt="loading failed">
+                        <img class="responsive" src="{{photo.image.url}}" alt="loading failed">
                     </div>
                 </div>
             </div>
