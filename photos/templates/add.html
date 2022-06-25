@@ -4,9 +4,13 @@
 {% block content %}
 
 <div class="container-fluid my-4">
+    <div class="row">
+        <div class="col-md-6">
+            <a href="{% url 'gallery' %}" class="btn btn-secondary">Go Back</a>
+        </div>
+    </div>
     <form action="" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
-
         <div class="row justify-content-center">
             <div class="col-md-6">
                 {{form.descr | as_crispy_field}}

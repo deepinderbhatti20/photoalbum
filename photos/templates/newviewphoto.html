@@ -1,0 +1,75 @@
+<!-- W3hubs.com - Download Free Responsive Website Layout Templates designed on HTML5 
+   CSS3,Bootstrap,Tailwind CSS which are 100% Mobile friendly. w3Hubs all Layouts are responsive 
+   cross browser supported, best quality world class designs. -->
+   <!DOCTYPE html>
+   <html>
+      <head>
+         <title>View</title>
+         <meta name="viewport" content="width=device-width, initial-scale=1">
+         <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300i,400,700&display=swap" rel="stylesheet">
+         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+         <style>
+            body {
+            background-color: #c1e1ea;
+            font-family: Nunito Sans;
+            }
+            .btn {
+            background-color: #3b6161;
+            width: 10%;
+            color: #fff;
+            padding: 10px;
+            font-size: 15px;
+            }
+            .btn:hover {
+            background-color: #0c0d0d;
+            color: #fff;
+            }
+            input {
+            height: 50px !important;
+            }
+            .form-control:focus {
+            border-color: #18dcff;
+            box-shadow: none;
+            }
+            p {
+            color: #131414;
+            font-size: 18px;
+            }
+            .cw {
+            width: 35%;
+            }
+            @media(max-width: 992px) {
+            .cw {
+            width: 60%;
+            }
+            }
+            @media(max-width: 768px) {
+            .cw {
+            width: 80%;
+            }
+            }
+            @media(max-width: 492px) {
+            .cw {
+            width: 90%;
+            }
+            }
+         </style>
+      </head>
+      <body>
+        {% include 'navbar.html' %}
+        
+        <div class="container my-3">
+            <div class="row justify-content-center">
+                <div class="col">
+                    <div>
+                        <a href="{% url 'gallery' %}" class="btn">Go Back</a><br>
+                        <img style="max-width: 900px;" src="{{photo.image.url}}" alt="loading failed">
+                    </div>
+                </div>
+            </div>
+            <div class="text mt-3">
+                <p>{{photo.descr}}</p>
+             </div>
+        </div>
+      </body>
+   </html>

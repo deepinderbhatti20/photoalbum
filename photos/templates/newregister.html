@@ -1,0 +1,81 @@
+<!-- W3hubs.com - Download Free Responsive Website Layout Templates designed on HTML5 
+   CSS3,Bootstrap,Tailwind CSS which are 100% Mobile friendly. w3Hubs all Layouts are responsive 
+   cross browser supported, best quality world class designs. -->
+   <!DOCTYPE html>
+   <html>
+      <head>
+         <title>Register User</title>
+         <meta name="viewport" content="width=device-width, initial-scale=1">
+         <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300i,400,700&display=swap" rel="stylesheet">
+         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+         <style>
+            body {
+            background-color:#c1e1ea;
+            font-family: Nunito Sans;
+            }
+            .btn {
+            background-color: #17c0eb;
+            width: 100%;
+            color: #fff;
+            padding: 10px;
+            font-size: 18px;
+            }
+            .btn:hover {
+            background-color: #2d3436;
+            color: #fff;
+            }
+            input {
+            height: 50px !important;
+            }
+            .form-control:focus {
+            border-color: #18dcff;
+            box-shadow: none;
+            }
+            h3 {
+            color: #17c0eb;
+            font-size: 36px;
+            }
+            .cw {
+            width: 35%;
+            }
+            @media(max-width: 992px) {
+            .cw {
+            width: 60%;
+            }
+            }
+            @media(max-width: 768px) {
+            .cw {
+            width: 80%;
+            }
+            }
+            @media(max-width: 492px) {
+            .cw {
+            width: 90%;
+            }
+            }
+         </style>
+      </head>
+      <body>
+        {% include 'navbar.html' %}
+        {{form.errors}}
+         <div class="container d-flex justify-content-center align-items-center vh-100">
+            <div class="bg-white text-center p-5 mt-3 center">
+               <h3>Register here</h3>
+               <form action="" method="POST">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col-md-6">{{form.first_name}}</div> 
+                    <div class="col-md-6">{{form.last_name}}</div>
+                </div><br>
+                {{form.username}} <br>
+                {{form.email}} <br>
+                {{form.password1}} <br>
+                {{form.password2}} <br>
+                <button type="submit" class="btn">Register</button>
+                <small><a href="{% url 'reset_password' %}">Forgot Password?</a></small><hr>
+                <small>Already a user?  <a href="{% url 'signin' %}">Signin</a> instead</small>
+            </form>    
+            </div>
+         </div>
+      </body>
+   </html>

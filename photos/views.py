@@ -55,7 +55,7 @@ def viewphoto(request,pk):
     ctxt = {
         'photo' : photo
     }
-    return render(request, 'viewphoto.html', ctxt)
+    return render(request, 'newviewphoto.html', ctxt)
 
 
 # Register User
@@ -67,19 +67,16 @@ def register(request):
             login(request,new_user)
             return redirect('gallery')
         else:
-            messages.error(request,'Something went wrong, please refresh page...')
             ctxt = {
                 'form':eform
             }
-            return render (request,'register.html',ctxt)
-
-
+            return render (request,'newregister.html',ctxt)
     else:
         eform = UserRegisterForm()
         ctxt = {
             'form' : eform
         }
-        return render (request, 'register.html', ctxt)
+        return render (request, 'newregister.html', ctxt)
 
 # Sign In
 def signin(request):
@@ -91,12 +88,16 @@ def signin(request):
             login(request,user)
             return redirect('gallery')
         else:
-            messages.info(request,'No user found, Please Register!')
-            return render(request, 'signin.html')
+            messages.info(request,'Please check Username or Password.')
+            return render(request, 'login.html')
     else:
-        return render(request, 'signin.html')
+        return render(request, 'login.html')
 
 # Sign Out
 def signout(request):
     logout(request)
     return redirect('signin')
+
+# About
+def about(request):
+    return render(request, 'about.html')

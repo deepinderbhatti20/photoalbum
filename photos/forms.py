@@ -22,10 +22,10 @@ class UserRegisterForm(UserCreationForm):
         
     def __init__(self,*args,**kwargs):
         super(UserRegisterForm,self).__init__(*args,**kwargs)
-        self.fields['first_name'].widget = forms.TextInput(attrs={'class' :'form-control'})
-        self.fields['last_name'].widget = forms.TextInput(attrs={'class' :'form-control'})
-        self.fields['username'].widget = forms.TextInput(attrs={'class' :'form-control'})
-        self.fields['email'].widget = forms.EmailInput(attrs={'class' :'form-control'})
-        self.fields['password1'].widget = forms.PasswordInput(attrs={'class' :'form-control'})
-        self.fields['password2'].widget = forms.PasswordInput(attrs={'class' :'form-control'})
+        self.fields['first_name'].widget = forms.TextInput(attrs={'class' :'form-control', 'placeholder':'First Name'})
+        self.fields['last_name'].widget = forms.TextInput(attrs={'class' :'form-control','placeholder':'Last Name'})
+        self.fields['username'].widget = forms.TextInput(attrs={'class' :'form-control','placeholder':'Username'})
+        self.fields['email'].widget = forms.EmailInput(attrs={'class' :'form-control','placeholder':'Email'})
+        self.fields['password1'].widget = forms.PasswordInput(attrs={'class' :'form-control','placeholder':'Password'})
+        self.fields['password2'].widget = forms.PasswordInput(attrs={'class' :'form-control','placeholder':'Confirm Password'})
     

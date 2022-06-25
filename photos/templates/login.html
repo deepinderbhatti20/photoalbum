@@ -1,0 +1,126 @@
+<!-- W3hubs.com - Download Free Responsive Website Layout Templates designed on HTML5 
+   CSS3,Bootstrap,Tailwind CSS which are 100% Mobile friendly. w3Hubs all Layouts are responsive 
+   cross browser supported, best quality world class designs. -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Log In</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300i,400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <style>
+        body {
+            background-color: #c1e1ea;
+            font-family: Nunito Sans;
+        }
+
+        .btn {
+            background-color: rgb(58, 60, 62);
+            width: 100%;
+            color: #fff;
+            padding: 10px;
+            font-size: 18px;
+        }
+
+        .btn:hover {
+            background-color: #4b5b5e;
+            color: #fff;
+        }
+
+        input {
+            height: 50px !important;
+        }
+
+        .form-control:focus {
+            border-color: #18dcff;
+            box-shadow: none;
+        }
+
+        h3 {
+            color: #17c0eb;
+            font-size: 36px;
+        }
+
+        .cw {
+            width: 35%;
+        }
+
+        @media(max-width: 992px) {
+            .cw {
+                width: 60%;
+            }
+        }
+
+        @media(max-width: 768px) {
+            .cw {
+                width: 80%;
+            }
+        }
+
+        @media(max-width: 492px) {
+            .cw {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+        crossorigin="anonymous"></script>
+
+    {% include 'navbar.html' %}
+
+    {% if messages %}
+    {% for message in messages %}
+    <p class="alert alert-danger">{{message}}</p>
+    {% endfor %}
+    {% endif %}
+
+    <!-- Button trigger modal -->
+    <div class="row justify-content-center  m-5">
+        <div class="col-md-6">
+            <button type="button" class="btn btn-block" data-toggle="modal" data-target="#exampleModal">
+                Press here to login
+            </button>
+        </div>
+    </div>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Login Form</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="" method="POST">
+                        {% csrf_token %}
+                        <input name="username" type="text" class="form-control" placeholder="Username" /><br>
+                        <input name="password" type="password" class="form-control" placeholder="Password" />
+
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Login</button>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
